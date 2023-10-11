@@ -1,5 +1,17 @@
 export const COLORS = {
-    white: "#fff",
-    greenApp: "#0e806a",
-    black: "#000",
-}
+  white: "#fff",
+  greenApp: "#0e806a",
+  greenAppDark: "#128C7E",
+  greenAppLight: "#25D366",
+  black: "#000",
+  gray: "#A0A09E",
+  primaryColor: "#232d36",
+  secondaryColor: "#9da3a9",
+  tertiary: "#0aad93",
+  teal: "#36897f",
+  background: "#101d25",
+  blue: "#34b7f1",
+  textColor: "#cdd4da",
+  textGrey: "#8b959a",
+  red: "#e53f43",
+};

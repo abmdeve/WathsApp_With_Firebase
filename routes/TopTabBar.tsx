@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import {
   createMaterialTopTabNavigator,
   MaterialTopTabScreenProps,
@@ -12,6 +12,7 @@ import Status from "../screens/Status";
 import Calls from "../screens/Calls";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { NavigatorStackScreenProps } from "./Navigator";
+import Header from "../components/Header";
 
 export type TabTopStackParamList = {
   Calls: undefined;
@@ -30,41 +31,44 @@ export type TabsStackScreenProps<T extends keyof TabTopStackParamList> =
 
 const TopTabBar = () => {
   return (
-    <Tab.Navigator
-      initialRouteName="Chat"
-      screenOptions={{
-        tabBarActiveTintColor: COLORS.white,
-        tabBarIndicatorStyle: {
-          backgroundColor: COLORS.white,
-        },
-        tabBarLabelStyle: {
-          fontWeight: "bold",
-        },
-        tabBarStyle: {
-          backgroundColor: COLORS.greenApp,
-        },
-      }}
-    >
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ color }) => {
-            return (
-              <MaterialCommunityIcons
-                name="account-group-outline"
-                size={24}
-                color={color}
-              />
-            );
+    <View style={{ flex: 1 }}>
+      <Header />
+      <Tab.Navigator
+        initialRouteName="Chat"
+        screenOptions={{
+          tabBarActiveTintColor: COLORS.white,
+          tabBarIndicatorStyle: {
+            backgroundColor: COLORS.white,
           },
-          tabBarLabelStyle: styles.tabBarStyleLabel,
+          tabBarLabelStyle: {
+            fontWeight: "bold",
+          },
+          tabBarStyle: {
+            backgroundColor: COLORS.greenApp,
+          },
         }}
-        name="Community"
-        component={Community}
-      />
-      <Tab.Screen name="Chat" component={Chat} />
-      <Tab.Screen name="Status" component={Status} />
-      <Tab.Screen name="Calls" component={Calls} />
-    </Tab.Navigator>
+      >
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) => {
+              return (
+                <MaterialCommunityIcons
+                  name="account-group-outline"
+                  size={24}
+                  color={color}
+                />
+              );
+            },
+            tabBarLabelStyle: styles.tabBarStyleLabel,
+          }}
+          name="Community"
+          component={Community}
+        />
+        <Tab.Screen name="Chat" component={Chat} />
+        <Tab.Screen name="Status" component={Status} />
+        <Tab.Screen name="Calls" component={Calls} />
+      </Tab.Navigator>
+    </View>
   );
 };
 

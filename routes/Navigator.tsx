@@ -7,10 +7,12 @@ import {
 } from "@react-navigation/native-stack";
 import TopTabBar, { TabTopStackParamList } from "./TopTabBar";
 import Contacts from "../screens/Contacts";
+import ChatScreen from "../screens/Chat/ChatScreen";
 
 export type NavigatorStackParamList = {
   TabsStack: NavigatorScreenParams<TabTopStackParamList>;
   Contacts: undefined;
+  ChatScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<NavigatorStackParamList>();
@@ -27,6 +29,7 @@ const Navigator = () => {
     >
       <Stack.Screen name="TabsStack" component={TopTabBar} />
       <Stack.Screen name="Contacts" component={Contacts} />
+      <Stack.Screen name="ChatScreen" component={ChatScreen} />
     </Stack.Navigator>
   );
 };
