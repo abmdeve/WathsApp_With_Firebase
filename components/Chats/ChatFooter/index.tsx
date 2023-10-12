@@ -107,6 +107,7 @@ export default ChatFooter;
 
 const styles = StyleSheet.create({
   container: {
+    // flex: 1,
     backgroundColor: COLORS.black,
     paddingVertical: 12,
     paddingHorizontal: 10,

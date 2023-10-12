@@ -1,13 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { NavigatorStackScreenProps } from "../../../routes/Navigator";
 import ChatHeader from "../../../components/Chats/ChatHeader";
 import ChatFooter from "../../../components/Chats/ChatFooter";
 import { Alert } from "react-native";
+import ChatMessage from "../../../components/Chats/ChatMessage";
+import { MESSAGE_DATA } from "../../../data/MessageData";
 
 const ChatScreen = ({
   navigation,
+  route,
 }: NavigatorStackScreenProps<"ChatScreen">) => {
+  const { id } = route.params;
   const [message, setMessage] = useState("");
   const [sendEnable, setSendEnable] = useState(false);
   const onChangeText = (text: string) => {
@@ -17,10 +21,10 @@ const ChatScreen = ({
   const __onSend = () => {
     setMessage("");
     setSendEnable(false);
-    Alert.alert("Message Send !")
+    Alert.alert("Message Send !");
   };
   return (
-    <View>
+    <>
       <ChatHeader
         name="Kunta Yannick"
         onGoBack={() => navigation.goBack()}
@@ -28,6 +32,12 @@ const ChatScreen = ({
         onCamera={() => "#"}
         onDotVertical={() => "#"}
       />
+      <ImageBackground
+        style={styles.wallpaper}
+        source={require("../../../src/images/wallpaper.jpeg")}
+      >
+        <ChatMessage userId={id} data={MESSAGE_DATA} />
+      </ImageBackground>
       <ChatFooter
         sendEnable={sendEnable}
         setSendEnable={setSendEnable}
@@ -40,11 +50,16 @@ const ChatScreen = ({
         onEmoji={() => "#"}
         onRupee={() => "#"}
       />
-      <Text>ChatScreen</Text>
-    </View>
+    </>
   );
 };
 
 export default ChatScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  wallpaper: {
+    flex: 1,
+    paddingHorizontal: 12,
+    paddingBottom: 12,
+  },
+});

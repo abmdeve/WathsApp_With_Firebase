@@ -30,7 +30,7 @@ const Chat = ({ navigation }: TabsStackScreenProps<"Chat">) => {
         renderItem={({ item }) => {
           return (
             <ChatItem
-            idUser={item.id}
+              idUser={item.id}
               key={item.id}
               image={item.image}
               name={item.name}
@@ -38,8 +38,8 @@ const Chat = ({ navigation }: TabsStackScreenProps<"Chat">) => {
               lastMessage={item.lastMessage}
               totalUnread={item.totalUnread}
               onPress={(id) => {
-                console.log('id', id)
-                navigation.navigate("ChatScreen")
+                console.log("id", id);
+                navigation.navigate("ChatScreen", { id: id });
               }}
             />
           );

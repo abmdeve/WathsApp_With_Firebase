@@ -12,7 +12,7 @@ import ChatScreen from "../screens/Chat/ChatScreen";
 export type NavigatorStackParamList = {
   TabsStack: NavigatorScreenParams<TabTopStackParamList>;
   Contacts: undefined;
-  ChatScreen: undefined;
+  ChatScreen: { id: number };
 };
 
 const Stack = createNativeStackNavigator<NavigatorStackParamList>();

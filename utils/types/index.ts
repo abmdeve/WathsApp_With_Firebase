@@ -6,3 +6,9 @@ export interface CHAT_DATA_TYPE {
   lastMessage: string;
   totalUnread: number;
 }
+
+export interface MESSAGE_DATA_TYPE {
+  id: string;
+  message: string;
+  time: string;
+}
