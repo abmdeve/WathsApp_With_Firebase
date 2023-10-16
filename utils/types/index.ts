@@ -12,3 +12,8 @@ export interface MESSAGE_DATA_TYPE {
   message: string;
   time: string;
 }
+
+export interface ITEM_STATUS {
+  id: number;
+  name?: string;
+}

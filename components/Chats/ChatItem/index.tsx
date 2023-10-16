@@ -2,9 +2,10 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import Ripple from "react-native-material-ripple";
 import { COLORS } from "../../../configs/Colors";
+import { ImageSourcePropType } from "react-native";
 
 interface ChatItemProps {
-  image: any;
+  image: ImageSourcePropType | any;
   name: string;
   time: string;
   lastMessage: string;

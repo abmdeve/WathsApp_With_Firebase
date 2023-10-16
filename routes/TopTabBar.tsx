@@ -32,7 +32,11 @@ export type TabsStackScreenProps<T extends keyof TabTopStackParamList> =
 const TopTabBar = () => {
   return (
     <View style={{ flex: 1 }}>
-      <Header />
+      <Header
+        onPressCamera={() => alert("CAMERA ON CLIKED...")}
+        onPressSearch={() => alert("SEARCH ON CLIKED...")}
+        onPressDotVertical={() => alert("DOT_VERTICAL ON CLIKED...")}
+      />
       <Tab.Navigator
         initialRouteName="Chat"
         screenOptions={{

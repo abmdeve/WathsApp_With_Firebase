@@ -4,6 +4,7 @@ import Ripple from "react-native-material-ripple";
 import { Feather, Fontisto, MaterialCommunityIcons } from "@expo/vector-icons";
 import { COLORS } from "../../configs/Colors";
 import VectorIcon from "../VectorIcon";
+import { HEADER_DATA } from "../../data/HeaderData";
 
 export interface HeaderProps {
   onPressSearch?: () => void;
@@ -21,33 +22,27 @@ const Header = ({
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>WhatsApp</Text>
         <View style={styles.iconContainer}>
-          <Ripple onPress={onPressCamera}>
-            <VectorIcon
-              style={styles.icon}
-              name={"camera"}
-              size={20}
-              color={COLORS.white}
-              type={"Feather"}
-            />
-          </Ripple>
-          <Ripple onPress={onPressSearch}>
-            <VectorIcon
-              style={styles.icon}
-              name={"search"}
-              size={20}
-              color={COLORS.white}
-              type={"Fontisto"}
-            />
-          </Ripple>
-          <Ripple onPress={onPressDotVertical}>
-            <VectorIcon
-              style={styles.icon}
-              name={"dots-vertical"}
-              size={20}
-              color={COLORS.white}
-              type={"MaterialCommunityIcons"}
-            />
-          </Ripple>
+          {HEADER_DATA.map((item) => {
+            return (
+              <Ripple
+                onPress={
+                  item.id === 1
+                    ? onPressCamera
+                    : item.id === 2
+                    ? onPressSearch
+                    : onPressDotVertical
+                }
+              >
+                <VectorIcon
+                  style={styles.icon}
+                  name={item.name}
+                  size={item.size}
+                  color={item.color}
+                  type={item.type}
+                />
+              </Ripple>
+            );
+          })}
         </View>
       </View>
     </View>
