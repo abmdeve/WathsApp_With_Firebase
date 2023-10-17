@@ -6,16 +6,16 @@ import Ripple from "react-native-material-ripple";
 import FullModal from "../../../utils/FullModal";
 
 const RecentStatus = () => {
-  const [showStatusModal, setShowStatusModal] = useState(false);
-  const setTimeUp = (itemId: number) => {
+  const [showStatusModal, setShowStatusModal] = useState(true);
+  const setTimeUp = (itemId: any) => {
     setShowStatusModal((prev) => ({ ...prev, [itemId]: false }));
   };
-  const vieweStatus = (itemId: number) => {
+  const vieweStatus = (itemId: any) => {
     setShowStatusModal((prev) => ({ ...prev, [itemId]: true }));
   };
   return (
     <View>
-      <Text style={styles.recentUpdate}>Recent update</Text>
+      <Text style={styles.recentUpdate}>Recent updates</Text>
       {RECENT_STATUS_DATA.map((item) => {
         return (
           <>
@@ -37,7 +37,7 @@ const RecentStatus = () => {
               </View>
             </TouchableOpacity>
             <FullModal
-              isVisible={showStatusModal[item.id]}
+              isVisible={showStatusModal[item.id] || false}
               setIsVisible={(value) =>
                 setShowStatusModal((prev) => ({ ...prev, [item.id]: value }))
               }

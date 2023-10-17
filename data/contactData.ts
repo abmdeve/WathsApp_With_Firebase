@@ -1,0 +1,86 @@
+export const CONTACT_DATA = [
+  {
+    id: 1,
+    name: "Amirr",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-1.jpg"),
+  },
+  {
+    id: 2,
+    name: "Bramirda",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-2.jpg"),
+  },
+  {
+    id: 3,
+    name: "Carabean Star",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-3.jpg"),
+  },
+  {
+    id: 4,
+    name: "Dalgonitos Tozar",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-4.jpg"),
+  },
+  {
+    id: 5,
+    name: "Edolite Kilos",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-5.jpg"),
+  },
+  {
+    id: 6,
+    name: "Fakirabi Lozanne",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-6.jpg"),
+  },
+  {
+    id: 7,
+    name: "Gaulisttaüs Marginalos",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-7.jpg"),
+  },
+  {
+    id: 8,
+    name: "Hakaliton Walahou",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-1.jpg"),
+  },
+  {
+    id: 9,
+    name: "Ibanez Lorenzola",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-2.jpg"),
+  },
+  {
+    id: 10,
+    name: "Kamoho Villarboaz",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-3.jpg"),
+  },
+  {
+    id: 11,
+    name: "Laütardi Blamakotos",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-4.jpg"),
+  },
+  {
+    id: 12,
+    name: "Maoro Costaldista",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-5.jpg"),
+  },
+  {
+    id: 13,
+    name: "Nyiaro Soumaoro",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-6.jpg"),
+  },
+  {
+    id: 14,
+    name: "Opelinga Ndombélé",
+    description: "Description Whatsapp profile",
+    image: require("../src/images/image-7.jpg"),
+  },
+];
