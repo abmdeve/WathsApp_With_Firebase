@@ -6,7 +6,7 @@ import Ripple from "react-native-material-ripple";
 import FullModal from "../../../utils/FullModal";
 
 const RecentStatus = () => {
-  const [showStatusModal, setShowStatusModal] = useState(true);
+  const [showStatusModal, setShowStatusModal] = useState(false);
   const setTimeUp = (itemId: number) => {
     setShowStatusModal((prev) => ({ ...prev, [itemId]: false }));
   };

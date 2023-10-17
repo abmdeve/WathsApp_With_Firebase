@@ -22,6 +22,10 @@ const Chat = ({ navigation }: TabsStackScreenProps<"Chat">) => {
     setchatData(CHAT_DATA);
   }, []);
 
+  const onGoToContact = () => {
+    navigation.navigate("Contacts");
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -50,7 +54,7 @@ const Chat = ({ navigation }: TabsStackScreenProps<"Chat">) => {
         name={"android-messages"}
         size={24}
         color={COLORS.white}
-        onPress={() => "#"}
+        onPress={onGoToContact}
       />
     </View>
   );
